@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Estimate</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <!-- CSS link -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Font Awsome css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- header starts -->
+    <header class="text-center text-info p-4">
+        <h2 class="fw-bold">Monthly Estimate <i class="fa-solid fa-circle-dollar-to-slot text-secondary"></i></h2>
+    </header>
+    <!-- header ends -->
+
+    <!-- main starts -->
+    <main>
+        <section class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="me-4 my-2">
+                        <img class="img-fluid" src="images/pic3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 estimate">
+                    <div class="text-center mt-4">
+                        <h3 class="mb-3">Income</h3>
+                        <label for="">Income:</label>
+                        <input id="income-input" type="text">
+
+                        <h3 class="mb-3">Expenses</h3>
+                        <label for="">Food:</label>
+                        <input id="food-input" type="text">
+                        <br>
+                        <label for="">Rent:</label>
+                        <input id="rent-input" type="text">
+                        <br>
+                        <label for="">Clothes:</label>
+                        <input id="cloth-input" type="text">
+                        <br>
+                        <button id="calculate-button" type="button"
+                            class="btn btn-info fs-5 fw-bold text-white px-5 mt-3 mb-4">Calculate</button>
+                        <h3 class="mb-3">Total Expenses: <span id="total-expense">0</span></h3>
+                        <h3>Balance: <span id="balance">0</span></h3>
+                    </div>
+                    <div class="text-center my-4">
+                        <label for="">Save:</label>
+                        <input type="text">
+                        <span class="m-3">%</span>
+                        <button type="button" class="btn btn-info fs-5 fw-bold text-white px-5 mt-3 mb-4">Save</button>
+                        <h3 class="mb-3 mt-3">Saving Amount: 0</h3>
+                        <h3>Remaining Balance: 0</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- main ends -->
+
+    <footer>
+
+    </footer>
+    <!-- JavaScript link -->
+    <script src="JS/app.js"></script>
+    <!-- Bootstrap JS link -->
+    <script src="JS/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

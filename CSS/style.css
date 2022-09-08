@@ -1,0 +1,20 @@
+.estimate {
+    background-color: aliceblue;
+    margin: 8px 0;
+}
+
+.estimate label {
+    width: 60px;
+    display: inline-block;
+    margin-bottom: 22px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: end;
+}
+
+.estimate input {
+    margin-left: 10px;
+    background-color: rgba(165, 163, 163, 0.224);
+    border: 1px solid rgba(165, 163, 163, 0.224);
+    font-weight: 500;
+}
