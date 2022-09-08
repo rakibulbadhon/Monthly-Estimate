@@ -12,6 +12,7 @@ function getAmountField(amountId) {
 
     return amountField;
 }
+
 //Event handler for calculate balance
 document.getElementById('calculate-button').addEventListener('click', function () {
     const incomeAmount = getInputField('income');
@@ -27,4 +28,19 @@ document.getElementById('calculate-button').addEventListener('click', function (
     //Get current balance
     const balance = getAmountField('balance');
     balance.innerText = incomeAmount - totalExpense.innerText;
+});
+
+//Event handler for saving balance
+document.getElementById('save-button').addEventListener('click', function () {
+    const balance = getAmountField('balance');
+    const saveInput = getInputField('save');
+
+    //Get saving amount
+    const savingAmount = getAmountField('saving-amount');
+    savingAmount.innerText = parseFloat(balance.innerText) * (saveInput / 100);
+
+    //Get remaining balance
+    const remainingBalance = getAmountField('remaining-balance');
+    remainingBalance.innerText = parseFloat(balance.innerText) - savingAmount.innerText;
+
 });
