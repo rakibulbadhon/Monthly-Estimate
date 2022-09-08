@@ -18,13 +18,13 @@ document.getElementById('calculate-button').addEventListener('click', function (
     const foodAmount = getInputField('food');
     const rentAmount = getInputField('rent');
     const clothAmount = getInputField('cloth');
+    const othersAmount = getInputField('others');
 
     //Add all expenses   
     const totalExpense = getAmountField('total-expense');
-    totalExpense.innerText = foodAmount + rentAmount + clothAmount;
+    totalExpense.innerText = foodAmount + rentAmount + clothAmount + othersAmount;
 
     //Get current balance
     const balance = getAmountField('balance');
     balance.innerText = incomeAmount - totalExpense.innerText;
-
 });
