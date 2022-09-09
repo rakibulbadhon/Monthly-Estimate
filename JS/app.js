@@ -21,26 +21,48 @@ document.getElementById('calculate-button').addEventListener('click', function (
     const clothAmount = getInputField('cloth');
     const othersAmount = getInputField('others');
 
-    //Add all expenses   
-    const totalExpense = getAmountField('total-expense');
-    totalExpense.innerText = foodAmount + rentAmount + clothAmount + othersAmount;
+    if (incomeAmount >= 0 && foodAmount >= 0 && rentAmount >= 0 && clothAmount >= 0 && othersAmount >= 0) {
+        //Add all expenses   
+        const totalExpense = getAmountField('total-expense');
+        totalExpense.innerText = foodAmount + rentAmount + clothAmount + othersAmount;
 
-    //Get current balance
-    const balance = getAmountField('balance');
-    balance.innerText = incomeAmount - totalExpense.innerText;
+        if (totalExpense.innerText <= incomeAmount) {
+            //Get current balance
+            const balance = getAmountField('balance');
+            balance.innerText = incomeAmount - totalExpense.innerText;
+        }
+        else {
+            const balance = getAmountField('balance');
+            balance.innerText = 'You are in loaned!';
+            balance.style.color = 'red';
+        }
+    }
+    else {
+        alert('Please input positive number!!');
+    }
 });
 
 //Event handler for saving balance
 document.getElementById('save-button').addEventListener('click', function () {
-    const balance = getAmountField('balance');
+    const balance = getAmountField('balance').innerText;
     const saveInput = getInputField('save');
+    const incomeInput = getInputField('income');
 
-    //Get saving amount
-    const savingAmount = getAmountField('saving-amount');
-    savingAmount.innerText = parseFloat(balance.innerText) * (saveInput / 100);
+    if (saveInput >= 0 && incomeInput >= 0) {
+        //Get saving amount
+        const saving = getAmountField('saving-amount');
+        const savingAmount = incomeInput * (saveInput / 100);
 
-    //Get remaining balance
-    const remainingBalance = getAmountField('remaining-balance');
-    remainingBalance.innerText = parseFloat(balance.innerText) - savingAmount.innerText;
+        if (savingAmount <= balance) {
+            //set saving amount
+            saving.innerText = savingAmount;
 
+            //Get remaining balance
+            const remainingBalance = getAmountField('remaining-balance');
+            remainingBalance.innerText = parseFloat(balance) - savingAmount;
+        }
+        else {
+            alert('Insufficient Balance!');
+        }
+    }
 });
